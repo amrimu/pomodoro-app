@@ -1,0 +1,480 @@
+:root {
+  --mainColor: #00E091;
+  --secondaryColor: #32ff7e;
+  --lightBg: #ffffff;
+  --mainText:  #ffffff;
+  --darkColor: rgb(2, 17, 8);
+  --background: linear-gradient(120deg, var(--secondaryColor), var(--mainColor));
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-image: var(--background);
+  color: var(--mainText);
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+.hidden {
+  display: none;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 2.5rem;
+  font-size: 3rem;
+}
+
+.disclaimer {
+  font-size: 0rem;
+  margin: 0;
+  padding: 0;
+}
+
+.main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: 2.5rem 4rem 4rem 4rem;
+}
+
+.left-container {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-right: 4rem;
+}
+
+.title-wrapper {
+  text-align: center;
+}
+
+.timer-container, .todo-container, .music-container, .quotes-container {
+  background-color: rgba(255, 255, 255, 0.25);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(var(--mainColor), 0.37);
+          box-shadow: 0 8px 32px 0 rgba(var(--mainColor), 0.37);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.timer-container, .todo-container {
+  margin-bottom: 3.25rem;
+}
+
+.timer-container {
+  width: 80vh;
+}
+
+.timer-container #timer {
+  font-size: 10rem;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.timer-container .actions {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.timer-container input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  border: none;
+  background: var(--lightBg);
+  font-size: 1.25rem;
+  padding: 10px;
+}
+
+.timer-container .timer-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 10px 50px;
+}
+
+.timer-container button {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  border: none;
+  color: var(--mainText);
+  background-color: var(--mainColor);
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+}
+
+.quotes-container {
+  width: 80vh;
+}
+
+.quotes-container #display-quote {
+  font-size: 1.75rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.quotes-container #new-quote {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  background-color: var(--lightBg);
+  color: var(--mainColor);
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.quotes-container #new-quote i {
+  padding-left: 10px;
+}
+
+.todo-container form {
+  min-height: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo-container form input, .todo-container form button {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  border: none;
+  background: var(--lightBg);
+}
+
+.todo-container form button {
+  padding: 0.5rem;
+  color: var(--mainColor);
+  background: var(--lightBg);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.todo-container form button:hover {
+  background: var(--mainColor);
+  color: var(--lightBg);
+}
+
+.todo-container .todo-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo-container .todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.todo-container .todo {
+  margin: 0.5rem;
+  background: var(--lightBg);
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.todo-container .todo li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.todo-container .completed-btn, .todo-container .trash-btn {
+  background: var(--secondaryColor);
+  color: var(--lightBg);
+  padding: 1rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.todo-container .completed-btn {
+  background: var(--mainColor);
+}
+
+.todo-container .todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.todo-container .fa-trash, .todo-container .fa-check {
+  pointer-events: none;
+}
+
+.todo-container .completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.todo-container .fall {
+  -webkit-transform: translateY(8rem) rotateZ(20deg);
+          transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+.todo-container select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+  color: black;
+  width: 10rem;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.todo-container .select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.todo-container .select::after {
+  content: '\25BC';
+  position: absolute;
+  background: var(--secondaryColor);
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  pointer-events: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.todo-container .select:hover::after {
+  background: var(--lightBg);
+  color: var(--secondaryColor);
+}
+
+.music-container .music-wrapper {
+  background-color: var(--lightBg);
+  border-radius: 15px;
+  -webkit-box-shadow: 0 20px 20px 0 rgba(var(--mainColor), 0.6);
+          box-shadow: 0 20px 20px 0 rgba(var(--mainColor), 0.6);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px 30px;
+  position: relative;
+  z-index: 10;
+  margin-top: 125px;
+}
+
+.music-container .img-container {
+  position: relative;
+  width: 110px;
+}
+
+.music-container .img-container::after {
+  content: '';
+  background-color: var(--lightBg);
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 50%;
+  bottom: 100%;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+}
+
+.music-container .img-container img {
+  width: inherit;
+  height: 110px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  left: 0;
+  bottom: 15%;
+  -webkit-animation: rotate 3s linear infinite;
+          animation: rotate 3s linear infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.music-container .play .img-container img {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.music-container .navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 1;
+}
+
+.music-container .action-btn {
+  background-color: var(--lightBg);
+  border: 0;
+  color: var(--secondaryColor);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 20px;
+}
+
+.music-container .action-btn.action-btn-big {
+  color: var(--mainColor);
+  font-size: 30px;
+}
+
+.music-container .action-btn:focus {
+  outline: 0;
+}
+
+.music-container .music-info {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px 15px 0 0;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: calc(100% - 40px);
+  padding: 10px 10px 10px 150px;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  padding: 10px 10px 10px 150px;
+  z-index: 0;
+}
+
+.music-container .music-info h3 {
+  margin: 0;
+  font-weight: 500;
+}
+
+.music-container .music-info .count-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.music-container .music-info .count-bar h4 {
+  font-size: 0.975rem;
+  margin-top: 8px;
+  font-weight: lighter;
+}
+
+.music-container .progress-container {
+  background: var(--lightBg);
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+  height: 4px;
+  width: 100%;
+}
+
+.music-container .progress {
+  background-color: var(--secondaryColor);
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  -webkit-transition: width 0.1s linear;
+  transition: width 0.1s linear;
+}
+
+@media screen and (max-width: 1024px) {
+  .disclaimer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0 2rem;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 1rem;
+    height: 100vh;
+  }
+  .main-container, h1 {
+    display: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */

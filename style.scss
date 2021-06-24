@@ -1,0 +1,90 @@
+:root {
+  --mainColor: #00E091;
+  --secondaryColor: #32ff7e;
+  --lightBg: #ffffff;
+
+  --mainText:  #ffffff;
+
+  --darkColor: rgb(2, 17, 8);
+
+  --background: linear-gradient(120deg, var(--secondaryColor), var(--mainColor));
+
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: var(--background);
+  color: var(--mainText);
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+.hidden {
+  display: none;
+}
+
+h1 {
+  text-align: center;
+  text-transform:uppercase;
+  margin-top: 2.5rem;
+  font-size: 3rem;
+}
+
+.disclaimer {
+  font-size: 0rem;
+  margin: 0;
+  padding: 0;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin:2.5rem 4rem 4rem 4rem;
+}
+
+.left-container {
+  align-items: flex-end;
+  margin-right: 4rem;
+}
+
+.title-wrapper {
+  text-align: center;
+}
+
+.timer-container, .todo-container, .music-container, .quotes-container {
+  background-color: rgba(255, 255, 255, .25);  
+  backdrop-filter: blur(5px);
+  box-shadow: 0 8px 32px 0 rgba(var(--mainColor), 0.37);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.timer-container, .todo-container {
+  margin-bottom: 3.25rem;;
+}
+
+@import 'scss/timer';
+@import 'scss/quotes';
+@import 'scss/todo';
+@import 'scss/music';
+
+@media screen and (max-width: 1024px){
+  .disclaimer{ 
+    display: flex;
+    justify-content: center;
+    margin: 0 2rem;
+    text-align: center;
+    align-items: center;
+    font-size: 1rem;
+    height: 100vh;
+  }
+  .main-container, h1 {
+    display: none;
+  }
+}
