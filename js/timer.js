@@ -58,7 +58,7 @@ const toggleClock = (reset) => {
     // STOP THE TIMER
     stopClock()
   } else {
-    console.log(isClockStopped)  
+    console.log(isClockStopped)
     if (isClockStopped) {
       setUpdatedTimers()
       isClockStopped = false
@@ -66,34 +66,34 @@ const toggleClock = (reset) => {
 
     if (isClockRunning === true) {
       // PAUSE THE TIMER
-      clearInterval(clockTimer);
-      isClockRunning = false;
+      clearInterval(clockTimer)
+      isClockRunning = false
     } else {
       // START THE TIMER
 
       clockTimer = setInterval(() => {
         stepDown()
-        displayCurrentTimeLeftInSession();
+        displayCurrentTimeLeftInSession()
       }, 1000)
-      isClockRunning = true;
+      isClockRunning = true
     }
     showStopIcon()
   }
 }
 
 const displayCurrentTimeLeftInSession = () => {
-  const secondsLeft = currentTimeLeftInSession;
-  let result = '';
-  const seconds = secondsLeft % 60;
-  const minutes = parseInt(secondsLeft / 60) % 60;
-  let hours = parseInt(secondsLeft / 3600);
+  const secondsLeft = currentTimeLeftInSession
+  let result = ''
+  const seconds = secondsLeft % 60
+  const minutes = parseInt(secondsLeft / 60) % 60
+  let hours = parseInt(secondsLeft / 3600)
   // add leading zeroes if it's less than 10
   function addLeadingZeroes(time) {
     return time < 10 ? `0${time}` : time
   }
   if (hours > 0) result += `${hours}:`
   result += `${addLeadingZeroes(minutes)}:${addLeadingZeroes(seconds)}`
-  pomodoroTimer.innerText = result.toString();
+  pomodoroTimer.innerText = result.toString()
 }
 
 const stopClock = () => {
@@ -165,12 +165,12 @@ const stepDown = () => {
 const setUpdatedTimers = () => {
   if (type === 'Work') {
     currentTimeLeftInSession = updatedWorkSessionDuration
-      ? updatedWorkSessionDuration 
+      ? updatedWorkSessionDuration
       : workSessionDuration
     workSessionDuration = currentTimeLeftInSession
   } else {
     currentTimeLeftInSession = updatedBreakSessionDuration
-      ? updatedBreakSessionDuration 
+      ? updatedBreakSessionDuration
       : breakSessionDuration
     breakSessionDuration = currentTimeLeftInSession
   }
