@@ -18,10 +18,11 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Pomodino</title>
+    <title>Pomodoro+</title>
   </head>
+
   <body>
-    <h1>Pomodino</h1>
+    <h1>Pomodoro+</h1>
     <div class="disclaimer">
       Sorry, this page is currently only available for desktop.
     </div>
@@ -33,40 +34,35 @@
           <div class="title-wrapper">
             <h2>Clock</h2>
           </div>
-          <div id="timer-container">
-            <div id="clock">
-              <div id="timer">25:00</div>
 
-              <div id="clock-actions" class="clock-actions">
-                <div class="timer-input">
-                  <label>Work Duration</label>
-                  <input
-                    type="number"
-                    name="input-work-duration"
-                    id="input-work-duration"
-                  />
-                </div>
-                <div class="timer-input">
-                  <label>Break Duration</label>
-                  <input
-                    type="number"
-                    name="input-break-duration"
-                    id="input-break-duration"
-                  />
-                </div>
-              </div>
+          <div id="timer">25:00</div>
 
-              <div class="actions">
-                <div id="clock-actions">
-                  <button id="start">
-                    <i class="fas fa-play" id="play-icon"></i>
-                    <i class="fas fa-pause hidden" id="pause-icon"></i>
-                  </button>
-                  <button id="stop" class="hidden">
-                    <i class="fas fa-stop"></i>
-                  </button>
-                </div>
-              </div>
+          <div class="timer-input">
+            <label>Work Duration</label>
+            <input
+              type="number"
+              name="input-work-duration"
+              id="input-work-duration"
+            />
+          </div>
+          <div class="timer-input">
+            <label>Break Duration</label>
+            <input
+              type="number"
+              name="input-break-duration"
+              id="input-break-duration"
+            />
+          </div>
+
+          <div class="actions">
+            <div id="clock-actions">
+              <button id="start">
+                <i class="fas fa-play" id="play-icon"></i>
+                <i class="fas fa-pause hidden" id="pause-icon"></i>
+              </button>
+              <button id="stop" class="hidden">
+                <i class="fas fa-stop"></i>
+              </button>
             </div>
           </div>
         </div>
@@ -76,7 +72,7 @@
           <div class="title-wrapper">
             <h2>Quotes</h2>
           </div>
-          <div id="display-quote">Quotes of the day...</div>
+          <div id="display-quote">Quote of the day...</div>
           <button id="new-quote">New Quote<i class="fas fa-random"></i></button>
         </div>
       </div>
@@ -146,6 +142,8 @@
         </div>
       </div>
     </div>
+
+    <div class="footer">Made with 🤍 by Amri Mufti</div>
 
     <script type="text/javascript" src="./js/timer.js"></script>
     <script type="text/javascript" src="./js/todo.js"></script>

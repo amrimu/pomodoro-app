@@ -7,36 +7,44 @@
     padding: 0;
   }
 
-  .actions {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-  }
-
-  input {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    border: none;
-    background: var(--lightBg);
-    font-size: 1.25rem;
-    padding: 10px;
-  }
-
   .timer-input {
     display: flex;
     justify-content: space-between;
     margin: 10px 50px;
+
+    label {
+      margin-right: 15px;
+    }
+
+    input {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      border: none;
+      background: var(--lightBg);
+      font-size: 1.25rem;
+      padding: 10px;
+    }
   }
 
-  button {
-    padding: 0.5rem;
-    font-size: 1.5rem;
-    border: none;
-    color: var(--mainText);
-    background-color: var(--mainColor);
-    margin: 0.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 50%;
+  .actions {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    button {
+      padding: 0.5rem;
+      font-size: 1.5rem;
+      border: none;
+      color: var(--mainText);
+      background-color: var(--mainColor);
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 50%;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 }

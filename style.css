@@ -1,10 +1,14 @@
 :root {
-  --mainColor: #00E091;
+  --mainColor: #00e091;
   --secondaryColor: #32ff7e;
   --lightBg: #ffffff;
-  --mainText:  #ffffff;
+  --mainText: #ffffff;
   --darkColor: rgb(2, 17, 8);
-  --background: linear-gradient(120deg, var(--secondaryColor), var(--mainColor));
+  --background: linear-gradient(
+    120deg,
+    var(--secondaryColor),
+    var(--mainColor)
+  );
 }
 
 * {
@@ -18,7 +22,7 @@
 body {
   background-image: var(--background);
   color: var(--mainText);
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   min-height: 100vh;
 }
 
@@ -49,6 +53,10 @@ h1 {
   margin: 2.5rem 4rem 4rem 4rem;
 }
 
+.title-wrapper {
+  text-align: center;
+}
+
 .left-container {
   -webkit-box-align: end;
       -ms-flex-align: end;
@@ -56,11 +64,10 @@ h1 {
   margin-right: 4rem;
 }
 
-.title-wrapper {
-  text-align: center;
-}
-
-.timer-container, .todo-container, .music-container, .quotes-container {
+.timer-container,
+.todo-container,
+.music-container,
+.quotes-container {
   background-color: rgba(255, 255, 255, 0.25);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
@@ -70,8 +77,20 @@ h1 {
   border-radius: 10px;
 }
 
-.timer-container, .todo-container {
+.timer-container,
+.todo-container {
   margin-bottom: 3.25rem;
+}
+
+.footer {
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 2.5rem;
 }
 
 .timer-container {
@@ -85,18 +104,21 @@ h1 {
   padding: 0;
 }
 
-.timer-container .actions {
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.timer-container .timer-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 10px 50px;
 }
 
-.timer-container input {
+.timer-container .timer-input label {
+  margin-right: 15px;
+}
+
+.timer-container .timer-input input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -112,17 +134,18 @@ h1 {
   padding: 10px;
 }
 
-.timer-container .timer-input {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 10px 50px;
+.timer-container .actions {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.timer-container button {
+.timer-container .actions button {
   padding: 0.5rem;
   font-size: 1.5rem;
   border: none;
@@ -131,6 +154,10 @@ h1 {
   margin: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: 50%;
+}
+
+.timer-container .actions button:hover {
+  cursor: pointer;
 }
 
 .quotes-container {
@@ -173,7 +200,8 @@ h1 {
           align-items: center;
 }
 
-.todo-container form input, .todo-container form button {
+.todo-container form input,
+.todo-container form button {
   padding: 0.5rem;
   font-size: 1.5rem;
   border: none;
@@ -232,7 +260,8 @@ h1 {
           flex: 1;
 }
 
-.todo-container .completed-btn, .todo-container .trash-btn {
+.todo-container .completed-btn,
+.todo-container .trash-btn {
   background: var(--secondaryColor);
   color: var(--lightBg);
   padding: 1rem;
@@ -249,7 +278,8 @@ h1 {
   padding: 0rem 0.5rem;
 }
 
-.todo-container .fa-trash, .todo-container .fa-check {
+.todo-container .fa-trash,
+.todo-container .fa-check {
   pointer-events: none;
 }
 
@@ -313,12 +343,64 @@ h1 {
   margin-top: 125px;
 }
 
-.music-container .img-container {
+.music-container .music-wrapper .music-info {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px 15px 0 0;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: calc(100% - 40px);
+  padding: 10px 10px 10px 150px;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  padding: 10px 10px 10px 150px;
+  z-index: 0;
+}
+
+.music-container .music-wrapper .music-info h3 {
+  margin: 0;
+  font-weight: 500;
+}
+
+.music-container .music-wrapper .music-info .count-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.music-container .music-wrapper .music-info .count-bar h4 {
+  font-size: 0.975rem;
+  margin-top: 8px;
+  font-weight: lighter;
+}
+
+.music-container .music-wrapper .music-info .progress-container {
+  background: var(--lightBg);
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+  height: 4px;
+  width: 100%;
+}
+
+.music-container .music-wrapper .music-info .progress-container .progress {
+  background-color: var(--secondaryColor);
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  -webkit-transition: width 0.1s linear;
+  transition: width 0.1s linear;
+}
+
+.music-container .music-wrapper .img-container {
   position: relative;
   width: 110px;
 }
 
-.music-container .img-container::after {
+.music-container .music-wrapper .img-container::after {
   content: '';
   background-color: var(--lightBg);
   position: absolute;
@@ -331,7 +413,7 @@ h1 {
           transform: translate(-50%, 50%);
 }
 
-.music-container .img-container img {
+.music-container .music-wrapper .img-container img {
   width: inherit;
   height: 110px;
   border-radius: 50%;
@@ -344,6 +426,39 @@ h1 {
           animation: rotate 3s linear infinite;
   -webkit-animation-play-state: paused;
           animation-play-state: paused;
+}
+
+.music-container .music-wrapper .navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 35px;
+  z-index: 1;
+}
+
+.music-container .music-wrapper .navigation .action-btn {
+  background-color: var(--lightBg);
+  border: 0;
+  color: var(--secondaryColor);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 20px;
+}
+
+.music-container .music-wrapper .navigation .action-btn.action-btn-big {
+  color: var(--mainColor);
+  font-size: 30px;
+}
+
+.music-container .music-wrapper .navigation .action-btn:focus {
+  outline: 0;
 }
 
 .music-container .play .img-container img {
@@ -373,90 +488,6 @@ h1 {
   }
 }
 
-.music-container .navigation {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  z-index: 1;
-}
-
-.music-container .action-btn {
-  background-color: var(--lightBg);
-  border: 0;
-  color: var(--secondaryColor);
-  font-size: 20px;
-  cursor: pointer;
-  padding: 10px;
-  margin: 0 20px;
-}
-
-.music-container .action-btn.action-btn-big {
-  color: var(--mainColor);
-  font-size: 30px;
-}
-
-.music-container .action-btn:focus {
-  outline: 0;
-}
-
-.music-container .music-info {
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 15px 15px 0 0;
-  position: absolute;
-  top: 0;
-  left: 20px;
-  width: calc(100% - 40px);
-  padding: 10px 10px 10px 150px;
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
-  padding: 10px 10px 10px 150px;
-  z-index: 0;
-}
-
-.music-container .music-info h3 {
-  margin: 0;
-  font-weight: 500;
-}
-
-.music-container .music-info .count-bar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.music-container .music-info .count-bar h4 {
-  font-size: 0.975rem;
-  margin-top: 8px;
-  font-weight: lighter;
-}
-
-.music-container .progress-container {
-  background: var(--lightBg);
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 10px 0;
-  height: 4px;
-  width: 100%;
-}
-
-.music-container .progress {
-  background-color: var(--secondaryColor);
-  border-radius: 5px;
-  height: 100%;
-  width: 0%;
-  -webkit-transition: width 0.1s linear;
-  transition: width 0.1s linear;
-}
-
 @media screen and (max-width: 1024px) {
   .disclaimer {
     display: -webkit-box;
@@ -473,7 +504,8 @@ h1 {
     font-size: 1rem;
     height: 100vh;
   }
-  .main-container, h1 {
+  .main-container,
+  h1 {
     display: none;
   }
 }
